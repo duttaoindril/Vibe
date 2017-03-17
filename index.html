@@ -12,6 +12,10 @@
             appearance: none;
             box-shadow: none;
             border-radius: 0;
+            color: #fff;
+            background-color: #6496c8;
+            text-shadow: -1px 1px #417cb8;
+            border: none;
         }
 
         #1:focus {
@@ -30,11 +34,11 @@
         {
             if(document.getElementById("1").value=="Stop..."){
                 document.getElementById("1").value="Start!";
-                navigator.vibrate(Infinity);
+                navigator.vibrate(0);
             }
             else if(document.getElementById("1").value=="Start!"){
                 document.getElementById("1").value="Stop...";
-                navigator.vibrate(0);
+                navigator.vibrate(Infinity);
             }
         }
     </script>
