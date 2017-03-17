@@ -39,13 +39,18 @@
         {
             if(document.getElementById("startButton").value=="Stop...") {
                 document.getElementById("startButton").value="Start!";
-                clearInterval(vibeVar);
+                clearTimeout(vibeVar);
                 navigator.vibrate(0);
             }
             else if(document.getElementById("startButton").value=="Start!") {
                 document.getElementById("startButton").value="Stop...";
-                vibevar = setInterval(function(){navigator.vibrate(1000);}, 1000);
+                navigator.vibrate(1000);
+                vibeVar = setTimeout(vibrate, 1000);
             }
+        }
+        function vibrate() {
+            navigator.vibrate(1000);
+            vibeVar = setTimeout(vibrate, 1000);
         }
     </script>
 </body>
