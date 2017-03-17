@@ -1,11 +1,42 @@
 <html>
 <head>
-<title>Vibe.Me</title>
+    <title>Vibe.Me</title>
+    <style>
+        button {
+            display: inline-block;
+            margin: 0 10px 0 0;
+            padding: 15px 45px;
+            font-size: 48px;
+            font-family: "Bitter",serif;
+            line-height: 1.8;
+            appearance: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        button:focus {
+            outline: none
+        }
+    </style>
 </head>
 <body>
-    <button type="button">Start!</button>
+    <input type="button" id="1" value="ON" style="color:blue" onclick="toggle(this);">
     <script>
-    
+        var canVibrate = "vibrate" in navigator || "mozVibrate" in navigator;
+        if (canVibrate && !("vibrate" in navigator))
+            navigator.vibrate = navigator.mozVibrate;
+        navigator.vibrate([1000, 500, 1000, 500, 1000]);
+        function toggle(button)
+        {
+            if(document.getElementById("1").value=="OFF"){
+                document.getElementById("1").value="ON";
+                navigator.vibrate(Infinity);
+            }
+            else if(document.getElementById("1").value=="ON"){
+                document.getElementById("1").value="OFF";
+                navigator.vibrate(0);
+            }
+        }
     </script>
 </body>
 </html>
