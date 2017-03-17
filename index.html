@@ -33,17 +33,18 @@
         var canVibrate = "vibrate" in navigator || "mozVibrate" in navigator;
         if (canVibrate && !("vibrate" in navigator))
             navigator.vibrate = navigator.mozVibrate;
-        navigator.vibrate([1000, 500, 1000, 500, 1000]);
+        navigator.vibrate([100, 10, 100, 10, 100]);
         var vibeVar;
         function toggle(button)
         {
             if(document.getElementById("startButton").value=="Stop..."){
                 document.getElementById("startButton").value="Start!";
                 clearInterval(vibeVar);
+                navigator.vibrate(0);
             }
             else if(document.getElementById("startButton").value=="Start!"){
                 document.getElementById("startButton").value="Stop...";
-                vibevar = setInterval(function(){navigator.vibrate(999);}, 1000);
+                vibevar = setInterval(function(){navigator.vibrate(1000);}, 1000);
             }
         }
     </script>
