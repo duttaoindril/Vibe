@@ -37,12 +37,12 @@
         var vibeVar;
         function toggle(button)
         {
-            if(document.getElementById("startButton").value=="Stop..."){
+            if(document.getElementById("startButton").value=="Stop...") {
                 document.getElementById("startButton").value="Start!";
                 clearInterval(vibeVar);
                 navigator.vibrate(0);
             }
-            else if(document.getElementById("startButton").value=="Start!"){
+            else if(document.getElementById("startButton").value=="Start!") {
                 document.getElementById("startButton").value="Stop...";
                 vibevar = setInterval(function(){navigator.vibrate(1000);}, 1000);
             }
