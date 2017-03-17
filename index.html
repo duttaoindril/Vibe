@@ -2,7 +2,7 @@
 <head>
     <title>Vibe.Me</title>
     <style>
-        button {
+        #1 {
             display: inline-block;
             margin: 0 10px 0 0;
             padding: 15px 45px;
@@ -14,13 +14,13 @@
             border-radius: 0;
         }
 
-        button:focus {
+        #1:focus {
             outline: none
         }
     </style>
 </head>
 <body>
-    <input type="button" id="1" value="ON" style="color:blue" onclick="toggle(this);">
+    <input type="button" id="1" value="Start!" style="color:blue" onclick="toggle(this);">
     <script>
         var canVibrate = "vibrate" in navigator || "mozVibrate" in navigator;
         if (canVibrate && !("vibrate" in navigator))
@@ -28,12 +28,12 @@
         navigator.vibrate([1000, 500, 1000, 500, 1000]);
         function toggle(button)
         {
-            if(document.getElementById("1").value=="OFF"){
-                document.getElementById("1").value="ON";
+            if(document.getElementById("1").value=="Stop..."){
+                document.getElementById("1").value="Start!";
                 navigator.vibrate(Infinity);
             }
-            else if(document.getElementById("1").value=="ON"){
-                document.getElementById("1").value="OFF";
+            else if(document.getElementById("1").value=="Start!"){
+                document.getElementById("1").value="Stop...";
                 navigator.vibrate(0);
             }
         }
